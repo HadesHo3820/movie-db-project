@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/core/utils/navigation_util.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/search_provider.dart';
 import 'package:the_movie_app/application/search/search_event.dart';
@@ -48,7 +51,9 @@ class SearchAppBar extends HookConsumerWidget {
               child: TextField(
                 controller: textEditingController,
                 autofocus: true,
-                style: const TextStyle(color: Colors.white),
+                cursorColor: AppColors.white,
+                style:
+                    TextStyles.searchScreenStyle[TextStyleKeys.textFieldText],
                 onSubmitted: (value) {
                   if (textEditingController.text.trim().isNotEmpty) {
                     ref.read(searchProvider.notifier).mapEventToState(
@@ -58,8 +63,8 @@ class SearchAppBar extends HookConsumerWidget {
                 },
                 decoration: InputDecoration(
                   hintText: SearchScreenText.textfieldHintText,
-                  hintStyle: const TextStyle(
-                      color: AppColors.tertiaryGrey, fontSize: 14),
+                  hintStyle: TextStyles
+                      .searchScreenStyle[TextStyleKeys.searchHintText],
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   suffixIcon: IconButton(

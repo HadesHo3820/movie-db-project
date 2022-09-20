@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
 
 class CustomSignInMethodIconButton extends StatelessWidget {
   final String assetPath;

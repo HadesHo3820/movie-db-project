@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/screens/search_screen/widgets/result_search_type.dart';
 
 class ListSearchType extends StatelessWidget {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/screens/movie_detail_screen/widgets/cast_section.dart';
 import 'package:the_movie_app/presentation/screens/movie_detail_screen/widgets/concrete_detail_section.dart';
@@ -31,10 +34,8 @@ class DetailScreen extends HookConsumerWidget {
                     label: DetailScreenText.overviewLabel,
                     concreteWidget: Text(
                       movieEntity!.overview!,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.secondaryGrey),
+                      style: TextStyles
+                          .detailScreenStyle[TextStyleKeys.overviewContent],
                     )),
                 const SizedBox(
                   height: 10,

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/enums.dart';
 
 class ApiConstant {
@@ -112,17 +111,6 @@ class ApiConstant {
       "https://img.youtube.com/vi/$videoId/0.jpg";
 }
 
-class AppColors {
-  static const Color darkBlue = Color(0xff031D33);
-  static const Color secondaryDarkBlue = Color(0xff3E5365);
-  static const Color orange = Color(0xffE77723);
-  static const Color grey = Color(0xff767676);
-  static const Color primaryGrey = Color(0xff606060);
-  static const Color secondaryGrey = Color(0xffA8A8A8);
-  static const Color tertiaryGrey = Color(0xffE6E6E6);
-  static const Color lightBlue = Color(0xff01b4e4);
-}
-
 class RouteNames {
   static const String onStart = "/";
   static const String loginScreen = "/login";
@@ -137,56 +125,4 @@ class RouteNames {
 
 class SharedPreferenceKey {
   static const String requestTokeyKey = "REQUEST-TOKEN";
-}
-
-class SplashScreenConstant {
-  static const String companyName = "Execution Lab";
-  static const String copyright = "CopyRight 2022";
-}
-
-class LoginScreenConstant {
-  static const usernameLabel = "Username";
-  static const usenameHintText = "Enter your usename";
-  static const passwordLabel = "Password";
-  static const passwordHintText = "Enter your password";
-  static const loginButtonLabel = "Sign In";
-  static const otherLoginMethodLabel = "Or continue with";
-}
-
-class HomeScreenText {
-  static const searchTextFieldHintText =
-      "Search for a movie, tv show, person, ...";
-  static const trendingLabel = "Trending";
-  static const popularLabel = "Popular";
-  static const topRateLabel = "Top rate";
-  static const playingMovieLabel = "Playing movie";
-  static const upcomingMovieLabel = "Upcoming movie";
-}
-
-class DetailScreenText {
-  static const String overviewLabel = "Overview";
-  static const String trailerLabel = "Trailer";
-  static const String posterLabel = "Poster";
-  static const String castLabel = "Cast";
-  static const String filmCrewLabel = "Film Crew";
-}
-
-class CastDetailScreenText {
-  static const String birthdayTitle = "Birthday:";
-  static const String overviewTitle = "Overview:";
-  static const String placeOfBirthTitle = "Place of birth:";
-  static const String knowForTitle = "Known for:";
-  static const String popularityTitle = "Popularity:";
-  static const String careerTitle = "Career:";
-}
-
-class SearchScreenText {
-  static const textfieldHintText = "Search for a movie, tv shows, person,...";
-  static const welcomeText = "Welcome.";
-  static const introductionText =
-      "Millions of movies. TV shows and people to discover. Explore now.";
-  static const searchResultLabel = "Search Result";
-  static const tvShowType = "TV Shows";
-  static const movieType = "Movies";
-  static const peopleType = "People";
 }

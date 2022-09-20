@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/domain/entities/video_entity.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
 import 'package:the_movie_app/presentation/reuse_component/youtube_video_dialog.dart';

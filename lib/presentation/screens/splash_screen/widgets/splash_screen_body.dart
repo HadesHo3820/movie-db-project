@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 
 class SplashScreenBody extends StatelessWidget {
   const SplashScreenBody({
@@ -21,7 +25,7 @@ class SplashScreenBody extends StatelessWidget {
           children: [
             const Spacer(),
             Image.asset(
-              "assets/images/logo.png",
+              AssetsConstants.appLogo,
               width: 208,
               height: 150,
             ),
@@ -29,26 +33,22 @@ class SplashScreenBody extends StatelessWidget {
               height: 30,
             ),
             const CircularProgressIndicator(
-              color: Colors.white,
+              color: AppColors.white,
             ),
             const Spacer(
               flex: 3,
             ),
-            const Text(
-              SplashScreenConstant.companyName,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
+            Text(
+              SplashScreenText.companyName,
+              style:
+                  TextStyles.splashScreenStyles[TextStyleKeys.copyrightTitle],
             ),
             const SizedBox(
               height: 10,
             ),
-            const Text(SplashScreenConstant.copyright,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16)),
+            Text(SplashScreenText.copyright,
+                style: TextStyles
+                    .splashScreenStyles[TextStyleKeys.copyrightTitle]),
             const SizedBox(
               height: 40,
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/concrete_section.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/playing/playing_section.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/popular/popular_section.dart';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 
@@ -45,10 +47,7 @@ class MovieItem extends StatelessWidget {
                 isMovieType
                     ? movieEntity.title ?? 'N/A'
                     : movieEntity.name ?? 'N/A',
-                style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
               const SizedBox(
                 height: 5,
@@ -61,10 +60,7 @@ class MovieItem extends StatelessWidget {
                     : movieEntity.firstAirDate!.isEmpty
                         ? 'N/A'
                         : movieEntity.firstAirDate!,
-                style: const TextStyle(
-                  color: AppColors.secondaryGrey,
-                  fontSize: 14,
-                ),
+                style: TextStyles.searchScreenStyle[TextStyleKeys.itemDate],
               ),
               const SizedBox(
                 height: 5,
@@ -72,10 +68,8 @@ class MovieItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   movieEntity.overview!.isEmpty ? 'N/A' : movieEntity.overview!,
-                  style: const TextStyle(
-                      fontSize: 10,
-                      color: Colors.black,
-                      overflow: TextOverflow.fade),
+                  style:
+                      TextStyles.searchScreenStyle[TextStyleKeys.itemOverview],
                 ),
               )
             ],

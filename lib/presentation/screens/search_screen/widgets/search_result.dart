@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/screens/search_screen/widgets/list_item_by_search_type.dart';
@@ -29,10 +32,9 @@ class SearchResult extends HookConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           SearchScreenText.searchResultLabel,
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white),
+          style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
           height: 10,

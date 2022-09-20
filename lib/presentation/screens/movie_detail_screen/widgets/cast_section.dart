@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/cast_detail_provider.dart';
@@ -68,7 +71,7 @@ class CastAndCrewSection extends HookConsumerWidget {
               width: 110,
               fit: BoxFit.fill,
               errorBuilder: (context, error, stackTrace) => Image.asset(
-                'assets/images/logo.png',
+                AssetsConstants.appLogo,
                 fit: BoxFit.fill,
                 height: 150,
                 width: 110,
@@ -79,17 +82,16 @@ class CastAndCrewSection extends HookConsumerWidget {
             ),
             Text(
               castEntity.name!,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                  color: Colors.white),
+              style:
+                  TextStyles.detailScreenStyle[TextStyleKeys.castAndCrewName],
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               isCast ? castEntity.character! : castEntity.job!,
-              style: const TextStyle(fontSize: 12, color: Colors.white),
+              style: TextStyles
+                  .detailScreenStyle[TextStyleKeys.castAndCrewCharacter],
             ),
           ],
         ),

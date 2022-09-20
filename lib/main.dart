@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/presentation/screens/cast_detail_screen/cast_detail_screen.dart';
 import 'package:the_movie_app/presentation/screens/movie_detail_screen/detail_screen.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/home_screen.dart';

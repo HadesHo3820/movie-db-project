@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/home_screen.dart';
 import 'package:the_movie_app/presentation/screens/navigation_screen/widgets/bottom_nav_bar.dart';
 import 'package:the_movie_app/presentation/screens/search_screen/search_screen.dart';

@@ -5,6 +5,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
@@ -78,10 +81,7 @@ class CarouselSliderWidget extends HookConsumerWidget {
             child: Text(
               movieEntity.originalTitle!,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.white),
+              style: TextStyles.homeScreenStyle[TextStyleKeys.itemListLabel],
             ),
           ),
         ),

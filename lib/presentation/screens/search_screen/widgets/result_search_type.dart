@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 
 class ResultSearchType extends StatelessWidget {
   final String label;
@@ -33,11 +35,11 @@ class ResultSearchType extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(
-                  color:
-                      (currentIndex == itemIndex) ? Colors.black : Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+              style: (currentIndex == itemIndex)
+                  ? TextStyles
+                      .searchScreenStyle[TextStyleKeys.selectedSearchType]
+                  : TextStyles
+                      .searchScreenStyle[TextStyleKeys.unselectedSearchType],
             ),
             const SizedBox(
               width: 10,
@@ -47,10 +49,7 @@ class ResultSearchType extends StatelessWidget {
               color: AppColors.orange,
               child: Text(
                 '$totalResult',
-                style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                style: TextStyles.searchScreenStyle[TextStyleKeys.totalResult],
               ),
             )
           ],

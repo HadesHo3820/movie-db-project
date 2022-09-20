@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 
@@ -41,20 +43,15 @@ class CastItem extends StatelessWidget {
             children: [
               Text(
                 castEntity.name ?? 'N/A',
-                style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
               const SizedBox(
                 height: 20,
               ),
               Text(
                 'Popularity: ${castEntity.popularity}',
-                style: const TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    overflow: TextOverflow.ellipsis),
+                style:
+                    TextStyles.searchScreenStyle[TextStyleKeys.itemPopularity],
               )
             ],
           ))

@@ -4,6 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/application/authentication/auth_event.dart';
 import 'package:the_movie_app/application/authentication/auth_state.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/auth_provider.dart';
 import 'package:the_movie_app/presentation/reuse_component/loading_widget.dart';
 import 'package:the_movie_app/presentation/screens/login_screen/widgets/label_and_textfield_widget.dart';
@@ -57,7 +60,7 @@ class LoginScreen extends HookConsumerWidget {
                     ),
                     Center(
                       child: Image.asset(
-                        "assets/images/logo.png",
+                        AssetsConstants.appLogo,
                         width: 208,
                         height: 150,
                       ),
@@ -66,24 +69,24 @@ class LoginScreen extends HookConsumerWidget {
                       height: 50,
                     ),
                     LabelAndTextField(
-                      label: LoginScreenConstant.usernameLabel,
+                      label: LoginScreenText.usernameLabel,
                       controller: usernameController,
-                      hintText: LoginScreenConstant.usenameHintText,
+                      hintText: LoginScreenText.usenameHintText,
                       isPasswordType: false,
                     ),
                     const SizedBox(
                       height: 15,
                     ),
                     LabelAndTextField(
-                        label: LoginScreenConstant.passwordLabel,
+                        label: LoginScreenText.passwordLabel,
                         controller: passwordController,
-                        hintText: LoginScreenConstant.passwordHintText,
+                        hintText: LoginScreenText.passwordHintText,
                         isPasswordType: true),
                     const SizedBox(
                       height: 30,
                     ),
                     SignInButton(
-                        labelButton: LoginScreenConstant.loginButtonLabel,
+                        labelButton: LoginScreenText.loginButtonLabel,
                         onPressed: () async {
                           ref.read(authProvider.notifier).mapEventsToState(
                               RequestLogin(
@@ -94,7 +97,7 @@ class LoginScreen extends HookConsumerWidget {
                       height: 80,
                     ),
                     const LabelWithDivider(
-                        label: LoginScreenConstant.otherLoginMethodLabel),
+                        label: LoginScreenText.otherLoginMethodLabel),
                     const SizedBox(
                       height: 20,
                     ),
@@ -102,12 +105,12 @@ class LoginScreen extends HookConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         CustomSignInMethodIconButton(
-                            assetPath: "assets/images/fb_logo.png"),
+                            assetPath: AssetsConstants.fbLogo),
                         SizedBox(
                           width: 10,
                         ),
                         CustomSignInMethodIconButton(
-                            assetPath: "assets/images/google_logo.png"),
+                            assetPath: AssetsConstants.googleLogo),
                       ],
                     )
                   ],

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
   const HomeScreenAppBar({
@@ -11,7 +16,7 @@ class HomeScreenAppBar extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          "assets/images/logo.png",
+          AssetsConstants.appLogo,
           width: 48,
           height: 35,
         ),
@@ -30,16 +35,13 @@ class HomeScreenAppBar extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
+                children: [
                   Text(
                     HomeScreenText.searchTextFieldHintText,
-                    style: TextStyle(
-                        fontSize: 13,
-                        color: AppColors.secondaryGrey,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic),
+                    style: TextStyles
+                        .homeScreenStyle[TextStyleKeys.searchHintText],
                   ),
-                  Icon(
+                  const Icon(
                     Icons.search,
                     color: AppColors.tertiaryGrey,
                   )

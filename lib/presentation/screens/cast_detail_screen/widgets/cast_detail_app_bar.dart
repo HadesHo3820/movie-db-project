@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/data/models/cast_model.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
@@ -41,10 +46,8 @@ class CastDetailAppBar extends StatelessWidget {
                   children: [
                     Text(
                       castEntity.name ?? "N/A",
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                      style: TextStyles
+                          .castDetailScreenStyle[TextStyleKeys.castName],
                     ),
                     buildCastInfoItem(CastDetailScreenText.birthdayTitle,
                         castEntity.birthday ?? "N/A"),
@@ -70,7 +73,7 @@ class CastDetailAppBar extends StatelessWidget {
             width: double.infinity,
             fit: BoxFit.fill,
             errorBuilder: (context, error, stackTrace) =>
-                Image.asset('assets/images/logo.png'),
+                Image.asset(AssetsConstants.appLogo),
           ),
         ),
       ),
@@ -82,8 +85,7 @@ class CastDetailAppBar extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyles.castDetailScreenStyle[TextStyleKeys.labelTitle],
           ),
           const SizedBox(
             width: 2,
@@ -91,8 +93,7 @@ class CastDetailAppBar extends StatelessWidget {
           Expanded(
             child: Text(
               content,
-              style:
-                  const TextStyle(fontSize: 14, color: AppColors.tertiaryGrey),
+              style: TextStyles.castDetailScreenStyle[TextStyleKeys.labelValue],
             ),
           ),
         ],

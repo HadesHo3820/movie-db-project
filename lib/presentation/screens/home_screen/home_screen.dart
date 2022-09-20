@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/home_screen_app_bar.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/home_screen_body.dart';
 

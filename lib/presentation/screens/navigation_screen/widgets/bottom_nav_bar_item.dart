@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 
 class BottomNavBarItem extends HookWidget {
   final IconData iconData;
@@ -39,11 +41,9 @@ class BottomNavBarItem extends HookWidget {
             ),
             Text(
               label,
-              style: TextStyle(
-                  fontSize: currentIndexValue == itemIndex ? 13 : 11,
-                  color: currentIndexValue == itemIndex
-                      ? Colors.white
-                      : AppColors.secondaryGrey),
+              style: (currentIndexValue == itemIndex)
+                  ? TextStyles.navBarStyles[TextStyleKeys.navLabelSelected]
+                  : TextStyles.navBarStyles[TextStyleKeys.navLabelUnselected],
             )
           ],
         ));

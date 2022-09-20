@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/assets.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 
 class InitialBody extends StatelessWidget {
   const InitialBody({
@@ -14,7 +17,7 @@ class InitialBody extends StatelessWidget {
           height: 50,
         ),
         Image.asset(
-          "assets/images/logo.png",
+          AssetsConstants.appLogo,
           height: 150,
           width: 200,
           fit: BoxFit.fill,
@@ -22,19 +25,17 @@ class InitialBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        const Text(
+        Text(
           SearchScreenText.welcomeText,
-          style: TextStyle(
-              fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyles.searchScreenStyle[TextStyleKeys.welcomeTitle],
         ),
         const SizedBox(
           height: 10,
         ),
-        const Text(
+        Text(
           SearchScreenText.introductionText,
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyles.searchScreenStyle[TextStyleKeys.introTitle],
         )
       ],
     );

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/screens/cast_detail_screen/widgets/cast_detail_app_bar.dart';
@@ -25,7 +28,8 @@ class CastDetailBody extends StatelessWidget {
                     title: CastDetailScreenText.overviewTitle,
                     widget: Text(
                       castEntity.biography ?? 'N/A',
-                      style: const TextStyle(color: AppColors.secondaryGrey),
+                      style: TextStyles
+                          .castDetailScreenStyle[TextStyleKeys.overviewContent],
                     )),
                 const SizedBox(
                   height: 10,
@@ -58,12 +62,11 @@ class CastDetailBody extends StatelessWidget {
         children: [
           Text(
             movieEntity.title ?? "N/A",
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
+            style: TextStyles.castDetailScreenStyle[TextStyleKeys.movieName],
           ),
           Text(
             movieEntity.releaseDate ?? "N/A",
-            style: const TextStyle(color: AppColors.tertiaryGrey, fontSize: 14),
+            style: TextStyles.castDetailScreenStyle[TextStyleKeys.movieDate],
           )
         ],
       ),
@@ -76,8 +79,7 @@ class CastDetailBody extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
+          style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
           height: 10,

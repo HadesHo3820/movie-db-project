@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 
 class ConcreteDetailSection extends StatelessWidget {
   final String label;
@@ -15,8 +17,7 @@ class ConcreteDetailSection extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
-              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
           height: 5,
