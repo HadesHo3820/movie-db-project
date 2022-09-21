@@ -37,7 +37,7 @@ class SearchResult extends HookConsumerWidget {
           SearchScreenText.searchResultLabel,
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
-        const SizedBox(
+        SizedBox(
           height: Dimens.smPaddingVertical,
         ),
         ListSearchType(
@@ -45,7 +45,7 @@ class SearchResult extends HookConsumerWidget {
             totalResultMovie: totalResultMovie,
             totalResultPeople: totalResultPeople,
             currentIndex: currentIndex),
-        const SizedBox(
+        SizedBox(
           height: Dimens.smPaddingVertical,
         ),
         const Divider(

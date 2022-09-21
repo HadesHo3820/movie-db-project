@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ImageWidget extends StatelessWidget {
+class NetworkImageWidget extends StatelessWidget {
   final String imageUrl;
   final double width;
   final double height;
   final BoxShape boxShape;
-  const ImageWidget({
+  const NetworkImageWidget({
     Key? key,
     required this.imageUrl,
     required this.width,

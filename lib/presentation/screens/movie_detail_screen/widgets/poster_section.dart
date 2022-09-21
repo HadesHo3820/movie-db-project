@@ -14,7 +14,7 @@ class PosterSection extends HookConsumerWidget {
     final resultProvier = ref.watch(movieImageProvider);
     return resultProvier.map(
       initial: (value) => const CircularProgressIndicator(),
-      loading: (value) => const TrailerAndPosterSkeleton(
+      loading: (value) => TrailerAndPosterSkeleton(
           widthItem: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
           heightItem: MovieDetailScreenDimens.trailerItemHeight),
       failed: (value) => Center(
@@ -40,7 +40,7 @@ class PosterSection extends HookConsumerWidget {
                   builder: (context) => ImageDialog(imageUrl: imageUrl));
             });
           },
-          separatorBuilder: (context, index) => const SizedBox(
+          separatorBuilder: (context, index) => SizedBox(
                 width: Dimens.smPaddingHorizontal,
               ),
           itemCount: result.length),

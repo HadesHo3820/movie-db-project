@@ -15,7 +15,7 @@ class ConcreteSection extends HookConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         LabelSection(content: labelText),
-        const SizedBox(
+        SizedBox(
           height: Dimens.smPaddingVertical,
         ),
         sectionContent

@@ -27,7 +27,7 @@ class DetailScreen extends HookConsumerWidget {
         },
         body: Container(
           color: AppColors.darkBlue,
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
               vertical: Dimens.verticalPadding,
               horizontal: Dimens.horizontalPadding),
           child: SingleChildScrollView(
@@ -40,25 +40,25 @@ class DetailScreen extends HookConsumerWidget {
                       style: TextStyles.movieDetailScreenStyle[
                           TextStyleKeys.overviewContent],
                     )),
-                const SizedBox(
+                SizedBox(
                   height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.trailerLabel,
                     concreteWidget: TrailerSection()),
-                const SizedBox(
+                SizedBox(
                   height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.posterLabel,
                     concreteWidget: PosterSection()),
-                const SizedBox(
+                SizedBox(
                   height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.castLabel,
                     concreteWidget: CastAndCrewSection(isCast: true)),
-                const SizedBox(
+                SizedBox(
                   height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(

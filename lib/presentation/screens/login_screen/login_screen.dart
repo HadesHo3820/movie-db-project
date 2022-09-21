@@ -51,13 +51,13 @@ class LoginScreen extends HookConsumerWidget {
               width: double.infinity,
               height: double.infinity,
               color: AppColors.darkBlue,
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Dimens.horizontalPadding),
+              padding:
+                  EdgeInsets.symmetric(horizontal: Dimens.horizontalPadding),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       height: LoginScreenDimens.logoTopSpacing,
                     ),
                     Center(
@@ -67,7 +67,7 @@ class LoginScreen extends HookConsumerWidget {
                         height: LoginScreenDimens.logoHeight,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: LoginScreenDimens.logoAndTextfieldSpacing,
                     ),
                     LabelAndTextField(
@@ -76,7 +76,7 @@ class LoginScreen extends HookConsumerWidget {
                       hintText: LoginScreenText.usenameHintText,
                       isPasswordType: false,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: Dimens.mdPaddingVertical,
                     ),
                     LabelAndTextField(
@@ -84,7 +84,7 @@ class LoginScreen extends HookConsumerWidget {
                         controller: passwordController,
                         hintText: LoginScreenText.passwordHintText,
                         isPasswordType: true),
-                    const SizedBox(
+                    SizedBox(
                       height: LoginScreenDimens.textFieldAndButtonSpacing,
                     ),
                     SignInButton(
@@ -95,23 +95,23 @@ class LoginScreen extends HookConsumerWidget {
                                   username: usernameController.text.trim(),
                                   password: passwordController.text.trim()));
                         }),
-                    const SizedBox(
+                    SizedBox(
                       height: LoginScreenDimens.buttonAndDividerSpacing,
                     ),
                     const LabelWithDivider(
                         label: LoginScreenText.otherLoginMethodLabel),
-                    const SizedBox(
+                    SizedBox(
                       height: LoginScreenDimens.dividerAndOtherButtonSpacing,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        CustomSignInMethodIconButton(
+                      children: [
+                        const CustomSignInMethodIconButton(
                             assetPath: AssetsConstants.fbLogo),
                         SizedBox(
                           width: Dimens.smPaddingHorizontal,
                         ),
-                        CustomSignInMethodIconButton(
+                        const CustomSignInMethodIconButton(
                             assetPath: AssetsConstants.googleLogo),
                       ],
                     )

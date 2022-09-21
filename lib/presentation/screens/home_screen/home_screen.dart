@@ -11,18 +11,18 @@ class HomeScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      padding: const EdgeInsets.only(
+      padding: EdgeInsets.only(
           top: HomeScreenDimens.screenPaddingTop,
           right: Dimens.horizontalPadding,
           left: Dimens.horizontalPadding),
       color: AppColors.darkBlue,
       child: Column(
-        children: const [
-          HomeScreenAppBar(),
+        children: [
+          const HomeScreenAppBar(),
           SizedBox(
             height: Dimens.verticalPadding,
           ),
-          Expanded(child: HomeScreenBody())
+          const Expanded(child: HomeScreenBody())
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/presentation/screens/cast_detail_screen/cast_detail_screen.dart';
@@ -30,21 +31,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routes: {
-        RouteNames.onStart: (context) => const SplashScreen(),
-        RouteNames.loginScreen: (context) => const LoginScreen(),
-        RouteNames.homeScreen: (context) => const HomeScreen(),
-        RouteNames.navigationScreen: (context) => const NavigationScreen(),
-        RouteNames.detailScreen: (context) => DetailScreen(),
-        RouteNames.castDetailScreen: (context) => const CastDetailScreen(),
-        RouteNames.searchScreen: (context) => const SearchScreen()
-      },
-    );
+    return ScreenUtilInit(
+        designSize: const Size(360, 800),
+        builder: (context, child) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            routes: {
+              RouteNames.onStart: (context) => const SplashScreen(),
+              RouteNames.loginScreen: (context) => const LoginScreen(),
+              RouteNames.homeScreen: (context) => const HomeScreen(),
+              RouteNames.navigationScreen: (context) =>
+                  const NavigationScreen(),
+              RouteNames.detailScreen: (context) => DetailScreen(),
+              RouteNames.castDetailScreen: (context) =>
+                  const CastDetailScreen(),
+              RouteNames.searchScreen: (context) => const SearchScreen()
+            },
+          );
+        });
   }
 }

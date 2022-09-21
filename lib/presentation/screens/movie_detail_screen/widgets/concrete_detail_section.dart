@@ -20,7 +20,7 @@ class ConcreteDetailSection extends StatelessWidget {
           label,
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
-        const SizedBox(
+        SizedBox(
           height: Dimens.xsPaddingVertical,
         ),
         concreteWidget

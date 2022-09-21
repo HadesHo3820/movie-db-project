@@ -30,7 +30,7 @@ class SplashScreenBody extends StatelessWidget {
               width: SplashScreenDimens.logoWidth,
               height: SplashScreenDimens.logoHeight,
             ),
-            const SizedBox(
+            SizedBox(
               height: SplashScreenDimens.logoAndCirSpacing,
             ),
             const CircularProgressIndicator(
@@ -44,13 +44,13 @@ class SplashScreenBody extends StatelessWidget {
               style:
                   TextStyles.splashScreenStyles[TextStyleKeys.copyrightTitle],
             ),
-            const SizedBox(
+            SizedBox(
               height: Dimens.smPaddingVertical,
             ),
             Text(SplashScreenText.copyright,
                 style: TextStyles
                     .splashScreenStyles[TextStyleKeys.copyrightTitle]),
-            const SizedBox(
+            SizedBox(
               height: SplashScreenDimens.copyrightBottomSpacing,
             ),
           ],

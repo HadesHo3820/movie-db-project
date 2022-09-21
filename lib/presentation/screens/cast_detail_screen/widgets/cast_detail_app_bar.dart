@@ -23,23 +23,23 @@ class CastDetailAppBar extends StatelessWidget {
       pinned: true,
       backgroundColor: AppColors.darkBlue,
       bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(Dimens.preferredSizedHeight),
+          preferredSize: Size.fromHeight(Dimens.preferredSizedHeight),
           child: Container(
             height: Dimens.preferredSizedHeight,
-            padding: const EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
                 horizontal: Dimens.horizontalPadding,
                 vertical: Dimens.xsPaddingVertical),
             width: double.infinity,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ImageWidget(
+                NetworkImageWidget(
                     imageUrl: ApiConstant.imageProfileApi(
                         castEntity.profilePath ?? "N/A", ProfileSizes.w300),
                     width: CastDetailScreenDimens.posterWidth,
                     height: CastDetailScreenDimens.posterWidth,
                     boxShape: BoxShape.circle),
-                const SizedBox(
+                SizedBox(
                   width: Dimens.smPaddingVertical,
                 ),
                 Expanded(
@@ -90,7 +90,7 @@ class CastDetailAppBar extends StatelessWidget {
             title,
             style: TextStyles.castDetailScreenStyle[TextStyleKeys.labelTitle],
           ),
-          const SizedBox(
+          SizedBox(
             width: Dimens.xsPaddingHorizontal,
           ),
           Expanded(

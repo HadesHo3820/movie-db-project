@@ -40,7 +40,7 @@ class CarouselSliderWidget extends HookConsumerWidget {
               enlargeStrategy: CenterPageEnlargeStrategy.height,
               onPageChanged: (index, reason) => activeIndex.value = index,
             )),
-        const SizedBox(
+        SizedBox(
           height: Dimens.verticalPadding,
         ),
         buildIndicator(activeIndex.value),
@@ -68,8 +68,7 @@ class CarouselSliderWidget extends HookConsumerWidget {
             .pushNamed(RouteNames.detailScreen, arguments: movieEntity);
       },
       child: Container(
-        margin:
-            const EdgeInsets.symmetric(horizontal: Dimens.mdPaddingHorizontal),
+        margin: EdgeInsets.symmetric(horizontal: Dimens.mdPaddingHorizontal),
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: NetworkImage(urlImage), fit: BoxFit.fill)),
@@ -77,7 +76,7 @@ class CarouselSliderWidget extends HookConsumerWidget {
         child: Container(
           width: double.infinity,
           height: HomeScreenDimens.titleContainerHeight,
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
               vertical: Dimens.smPaddingVertical,
               horizontal: Dimens.xsPaddingHorizontal),
           color: Colors.black.withOpacity(0.5),
@@ -97,7 +96,7 @@ class CarouselSliderWidget extends HookConsumerWidget {
     return AnimatedSmoothIndicator(
       activeIndex: activeIndex,
       count: listMovieEntity.length,
-      effect: const SlideEffect(
+      effect: SlideEffect(
           dotWidth: HomeScreenDimens.indicatorWidth,
           dotHeight: HomeScreenDimens.indicatorWidth,
           activeDotColor: AppColors.tertiaryGrey,

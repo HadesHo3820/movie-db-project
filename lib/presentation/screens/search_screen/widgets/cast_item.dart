@@ -35,7 +35,7 @@ class CastItem extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     bottomLeft: Radius.circular(10))),
           ),
-          const SizedBox(
+          SizedBox(
             width: Dimens.smPaddingVertical,
           ),
           Expanded(
@@ -46,7 +46,7 @@ class CastItem extends StatelessWidget {
                 castEntity.name ?? 'N/A',
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
-              const SizedBox(
+              SizedBox(
                 height: Dimens.verticalPadding,
               ),
               Text(

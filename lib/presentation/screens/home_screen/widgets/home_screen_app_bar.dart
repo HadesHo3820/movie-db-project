@@ -21,7 +21,7 @@ class HomeScreenAppBar extends StatelessWidget {
           width: HomeScreenDimens.logoWidth,
           height: HomeScreenDimens.logoHeight,
         ),
-        const SizedBox(
+        SizedBox(
           width: Dimens.mdPaddingHorizontal,
         ),
         Expanded(

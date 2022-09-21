@@ -12,46 +12,59 @@ class CarouselSkeleton extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Skeleton(
-              height: 150,
-              width: 80,
+              height: HomeScreenDimens.carouselItemHeight,
+              width: HomeScreenDimens.carouselItemWidth,
             ),
             SizedBox(
               width: Dimens.mdPaddingHorizontal,
             ),
             Skeleton(
-              height: 180,
-              width: 160,
+              height: HomeScreenDimens.mainCarouselItemHeight,
+              width: HomeScreenDimens.mainCarouselItemWidth,
             ),
             SizedBox(
               width: Dimens.mdPaddingHorizontal,
             ),
             Skeleton(
-              height: 150,
-              width: 80,
+              height: HomeScreenDimens.carouselItemHeight,
+              width: HomeScreenDimens.carouselItemWidth,
             )
           ],
         ),
-        const SizedBox(
+        SizedBox(
           height: Dimens.smPaddingVertical,
         ),
-        SizedBox(
-          height: 10,
-          width: 60,
-          child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => const Skeleton(
-                    width: 5,
-                    height: 5,
-                    boxShape: BoxShape.circle,
-                  ),
-              separatorBuilder: (context, index) => const SizedBox(
-                    width: Dimens.xxsPaddingHorizontal,
-                  ),
-              itemCount: 8),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ...List.generate(
+                8,
+                (index) => Skeleton(
+                      width: Dimens.xsPaddingHorizontal,
+                      height: Dimens.xsPaddingHorizontal,
+                      boxShape: BoxShape.circle,
+                    )),
+          ],
         )
+
+        // SizedBox(
+        //   height: 10,
+        //   width: 60,
+        //   child: ListView.separated(
+        //       scrollDirection: Axis.horizontal,
+        //       physics: const NeverScrollableScrollPhysics(),
+        //       itemBuilder: (context, index) => const Skeleton(
+        //             width: 5,
+        //             height: 5,
+        //             boxShape: BoxShape.circle,
+        //           ),
+        //       separatorBuilder: (context, index) => SizedBox(
+        //             width: Dimens.xxsPaddingHorizontal,
+        //           ),
+        //       itemCount: 8),
+        // )
       ],
     );
   }

@@ -22,10 +22,10 @@ class DetailScreenAppBar extends StatelessWidget {
       pinned: true,
       backgroundColor: AppColors.darkBlue,
       bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(Dimens.preferredSizedHeight),
+          preferredSize: Size.fromHeight(Dimens.preferredSizedHeight),
           child: Container(
             height: Dimens.preferredSizedHeight,
-            padding: const EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
                 horizontal: Dimens.horizontalPadding,
                 vertical: Dimens.xsPaddingVertical),
             width: double.maxFinite,
@@ -41,7 +41,7 @@ class DetailScreenAppBar extends StatelessWidget {
                   width: MovieDetailScreenDimens.posterWidth,
                   fit: BoxFit.cover,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: Dimens.smPaddingHorizontal,
                 ),
                 Expanded(
@@ -51,7 +51,7 @@ class DetailScreenAppBar extends StatelessWidget {
                       Text(movieEntity!.originalTitle!,
                           style: TextStyles.movieDetailScreenStyle[
                               TextStyleKeys.movieTitle]),
-                      const SizedBox(
+                      SizedBox(
                         height: Dimens.xsPaddingVertical,
                       ),
                       Row(
@@ -68,7 +68,7 @@ class DetailScreenAppBar extends StatelessWidget {
                             Icons.timer,
                             color: Colors.white,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: Dimens.xxsPaddingHorizontal,
                           ),
                           Text(
@@ -84,7 +84,7 @@ class DetailScreenAppBar extends StatelessWidget {
                           Text("${movieEntity!.voteCount!} votes",
                               style: TextStyles.movieDetailScreenStyle[
                                   TextStyleKeys.voteTitle]),
-                          const SizedBox(
+                          SizedBox(
                             width: Dimens.xsPaddingHorizontal,
                           ),
                           Container(

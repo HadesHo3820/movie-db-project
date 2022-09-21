@@ -15,32 +15,32 @@ class HomeScreenBody extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
       child: Column(
-        children: const [
-          ConcreteSection(
+        children: [
+          const ConcreteSection(
               labelText: HomeScreenText.trendingLabel,
               sectionContent: TrendingSection()),
           SizedBox(
             height: Dimens.verticalPadding,
           ),
-          ConcreteSection(
+          const ConcreteSection(
               labelText: HomeScreenText.popularLabel,
               sectionContent: PopularSection()),
           SizedBox(
             height: Dimens.verticalPadding,
           ),
-          ConcreteSection(
+          const ConcreteSection(
               labelText: HomeScreenText.topRateLabel,
               sectionContent: TopRatedSection()),
           SizedBox(
             height: Dimens.verticalPadding,
           ),
-          ConcreteSection(
+          const ConcreteSection(
               labelText: HomeScreenText.playingMovieLabel,
               sectionContent: PlayingSection()),
           SizedBox(
             height: Dimens.verticalPadding,
           ),
-          ConcreteSection(
+          const ConcreteSection(
               labelText: HomeScreenText.upcomingMovieLabel,
               sectionContent: UpcomingSection()),
         ],

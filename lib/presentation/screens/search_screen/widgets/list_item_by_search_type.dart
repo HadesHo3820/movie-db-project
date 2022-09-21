@@ -55,7 +55,7 @@ class ListItemBySearchType extends StatelessWidget {
                   }
                   return const SizedBox.shrink();
                 },
-                separatorBuilder: (context, index) => const SizedBox(
+                separatorBuilder: (context, index) => SizedBox(
                       height: Dimens.mdPaddingVertical,
                     ),
                 itemCount: listEntity.length));

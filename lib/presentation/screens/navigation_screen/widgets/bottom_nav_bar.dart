@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/screens/navigation_screen/widgets/bottom_nav_bar_item.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -12,7 +13,7 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65,
+      height: NavScreenDimens.navBarHeight,
       width: double.infinity,
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,

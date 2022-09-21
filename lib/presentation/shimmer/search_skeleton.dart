@@ -13,7 +13,7 @@ class SearchSkeleton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Wrap(
-            children: const [
+            children: [
               Skeleton(
                 height: SearchScreenDimens.searchTypeItemSkeletonHeight,
                 width: SearchScreenDimens.searchTypeItemSkeletonWidth,
@@ -34,21 +34,21 @@ class SearchSkeleton extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: Dimens.smPaddingVertical,
           ),
           const Divider(
             color: AppColors.tertiaryGrey,
           ),
-          const SizedBox(
+          SizedBox(
             height: Dimens.smPaddingVertical,
           ),
           buildItemSkeleton(),
-          const SizedBox(
+          SizedBox(
             height: Dimens.smPaddingVertical,
           ),
           buildItemSkeleton(),
-          const SizedBox(height: Dimens.smPaddingVertical),
+          SizedBox(height: Dimens.smPaddingVertical),
           buildItemSkeleton(),
         ],
       ),
@@ -58,16 +58,16 @@ class SearchSkeleton extends StatelessWidget {
   Widget buildItemSkeleton() {
     return Row(
       children: [
-        const Skeleton(
+        Skeleton(
           height: SearchScreenDimens.searchListItemImageSkeletonHeight,
           width: SearchScreenDimens.searchListItemImageSkeletonWidth,
         ),
-        const SizedBox(
+        SizedBox(
           width: Dimens.smPaddingHorizontal,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Skeleton(
               height: SearchScreenDimens.searchListItemTitleSkeletonHeight,
               width: SearchScreenDimens.searchListItemTitleSkeletonWidth,

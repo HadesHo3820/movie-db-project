@@ -37,7 +37,7 @@ class MovieItem extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     bottomLeft: Radius.circular(10))),
           ),
-          const SizedBox(
+          SizedBox(
             width: Dimens.smPaddingHorizontal,
           ),
           Expanded(
@@ -50,7 +50,7 @@ class MovieItem extends StatelessWidget {
                     : movieEntity.name ?? 'N/A',
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
-              const SizedBox(
+              SizedBox(
                 height: Dimens.xsPaddingVertical,
               ),
               Text(
@@ -63,7 +63,7 @@ class MovieItem extends StatelessWidget {
                         : movieEntity.firstAirDate!,
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemDate],
               ),
-              const SizedBox(
+              SizedBox(
                 height: Dimens.xsPaddingVertical,
               ),
               Expanded(

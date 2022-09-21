@@ -14,7 +14,7 @@ class Skeleton extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      padding: const EdgeInsets.symmetric(
+      padding: EdgeInsets.symmetric(
           vertical: Dimens.xsPaddingVertical,
           horizontal: Dimens.xsPaddingHorizontal),
       decoration: BoxDecoration(

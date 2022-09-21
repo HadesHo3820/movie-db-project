@@ -9,22 +9,22 @@ class MovieListSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        Skeleton(
+      children: [
+        const Skeleton(
           height: 150,
           width: 110,
         ),
         SizedBox(
           width: Dimens.mdPaddingVertical,
         ),
-        Skeleton(
+        const Skeleton(
           height: 150,
           width: 110,
         ),
         SizedBox(
           width: Dimens.mdPaddingVertical,
         ),
-        Skeleton(
+        const Skeleton(
           height: 150,
           width: 110,
         )

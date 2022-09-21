@@ -24,7 +24,7 @@ class MovieList extends HookConsumerWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) =>
               buildListItem(listMovieEntity[index], ref, context),
-          separatorBuilder: (context, index) => const SizedBox(
+          separatorBuilder: (context, index) => SizedBox(
                 width: Dimens.mdPaddingHorizontal,
               ),
           itemCount: listMovieEntity.length),

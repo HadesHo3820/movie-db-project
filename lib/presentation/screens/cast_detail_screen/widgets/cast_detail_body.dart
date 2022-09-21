@@ -20,7 +20,7 @@ class CastDetailBody extends StatelessWidget {
         },
         body: Container(
           color: AppColors.darkBlue,
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
               horizontal: Dimens.horizontalPadding,
               vertical: Dimens.verticalPadding),
           child: SingleChildScrollView(
@@ -34,7 +34,7 @@ class CastDetailBody extends StatelessWidget {
                       style: TextStyles
                           .castDetailScreenStyle[TextStyleKeys.overviewContent],
                     )),
-                const SizedBox(
+                SizedBox(
                   height: Dimens.smPaddingVertical,
                 ),
                 buildTitleAndWidget(
@@ -56,8 +56,8 @@ class CastDetailBody extends StatelessWidget {
     return Container(
       height: CastDetailScreenDimens.movieCarrerItemHeight,
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: Dimens.smPaddingVertical),
-      padding: const EdgeInsets.symmetric(
+      margin: EdgeInsets.symmetric(vertical: Dimens.smPaddingVertical),
+      padding: EdgeInsets.symmetric(
           vertical: Dimens.xsPaddingVertical,
           horizontal: Dimens.xsPaddingHorizontal),
       decoration: BoxDecoration(border: Border.all(color: Colors.white)),
@@ -86,7 +86,7 @@ class CastDetailBody extends StatelessWidget {
           title,
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
-        const SizedBox(
+        SizedBox(
           height: Dimens.smPaddingVertical,
         ),
         widget

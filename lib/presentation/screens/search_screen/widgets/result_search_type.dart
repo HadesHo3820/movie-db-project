@@ -24,7 +24,7 @@ class ResultSearchType extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
             vertical: Dimens.smPaddingVertical,
             horizontal: Dimens.xsPaddingHorizontal),
         decoration: BoxDecoration(
@@ -32,7 +32,7 @@ class ResultSearchType extends StatelessWidget {
                 ? AppColors.tertiaryGrey
                 : AppColors.grey,
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        constraints: const BoxConstraints(
+        constraints: BoxConstraints(
             maxHeight: SearchScreenDimens.resultSearchTypeMaxHeight,
             maxWidth: SearchScreenDimens.resultSearchTypeMaxWidth),
         child: Row(
@@ -46,7 +46,7 @@ class ResultSearchType extends StatelessWidget {
                   : TextStyles
                       .searchScreenStyle[TextStyleKeys.unselectedSearchType],
             ),
-            const SizedBox(
+            SizedBox(
               width: Dimens.smPaddingVertical,
             ),
             Container(

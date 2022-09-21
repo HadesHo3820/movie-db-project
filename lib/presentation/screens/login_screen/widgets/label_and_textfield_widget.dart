@@ -28,14 +28,14 @@ class LabelAndTextField extends HookWidget {
           label,
           style: TextStyles.loginScreenStyles[TextStyleKeys.textfieldLabel],
         ),
-        const SizedBox(
+        SizedBox(
           height: Dimens.xsPaddingVertical,
         ),
         Container(
           width: double.infinity,
           height: LoginScreenDimens.textFieldHeight,
           color: Colors.white,
-          padding: const EdgeInsets.only(left: Dimens.xsPaddingHorizontal),
+          padding: EdgeInsets.only(left: Dimens.xsPaddingHorizontal),
           child: TextField(
             controller: controller,
             cursorColor: AppColors.darkBlue,

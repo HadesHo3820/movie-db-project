@@ -16,11 +16,11 @@ class LabelWithDivider extends StatelessWidget {
             child: Divider(
           color: Colors.white,
         )),
-        const SizedBox(
+        SizedBox(
           width: Dimens.xsPaddingHorizontal,
         ),
         Text(label, style: const TextStyle(color: Colors.white, fontSize: 15)),
-        const SizedBox(
+        SizedBox(
           width: Dimens.xsPaddingHorizontal,
         ),
         const Expanded(

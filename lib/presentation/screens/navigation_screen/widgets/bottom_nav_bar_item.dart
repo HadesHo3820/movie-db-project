@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 
@@ -36,8 +37,8 @@ class BottomNavBarItem extends HookWidget {
                   : AppColors.secondaryGrey,
               size: currentIndexValue == itemIndex ? 28 : 25,
             ),
-            const SizedBox(
-              height: 2,
+            SizedBox(
+              height: Dimens.xxsPaddingVertical,
             ),
             Text(
               label,

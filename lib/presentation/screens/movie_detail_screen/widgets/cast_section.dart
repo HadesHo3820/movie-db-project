@@ -21,7 +21,7 @@ class CastAndCrewSection extends HookConsumerWidget {
     final resultProvider = ref.watch(movieCastProvider);
     return resultProvider.map(
       initial: (value) => const CircularProgressIndicator(),
-      loading: (value) => const CastAndCrewSkeleton(
+      loading: (value) => CastAndCrewSkeleton(
           widthItem: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
           heightItem: MovieDetailScreenDimens.trailerItemHeight),
       failed: (value) => Center(
@@ -38,7 +38,7 @@ class CastAndCrewSection extends HookConsumerWidget {
       List<CastEntity> result, BuildContext context, WidgetRef ref) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      constraints: const BoxConstraints(
+      constraints: BoxConstraints(
           maxHeight: MovieDetailScreenDimens.listCastAndCrewMaxHeight),
       child: ListView.separated(
           padding: EdgeInsets.zero,
@@ -51,7 +51,7 @@ class CastAndCrewSection extends HookConsumerWidget {
                   Navigator.of(context).pushNamed(RouteNames.castDetailScreen);
                 },
               ),
-          separatorBuilder: (context, index) => const SizedBox(
+          separatorBuilder: (context, index) => SizedBox(
                 width: Dimens.smPaddingHorizontal,
               ),
           itemCount: result.length),
@@ -81,7 +81,7 @@ class CastAndCrewSection extends HookConsumerWidget {
                 width: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: Dimens.smPaddingVertical,
             ),
             Text(
@@ -89,7 +89,7 @@ class CastAndCrewSection extends HookConsumerWidget {
               style: TextStyles
                   .movieDetailScreenStyle[TextStyleKeys.castAndCrewName],
             ),
-            const SizedBox(
+            SizedBox(
               height: Dimens.xsPaddingVertical,
             ),
             Text(

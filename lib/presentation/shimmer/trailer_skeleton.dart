@@ -23,7 +23,7 @@ class TrailerAndPosterSkeleton extends StatelessWidget {
                 height: heightItem,
               ),
           separatorBuilder: (context, index) =>
-              const SizedBox(width: Dimens.smPaddingHorizontal),
+              SizedBox(width: Dimens.smPaddingHorizontal),
           itemCount: 3),
     );
   }

@@ -15,7 +15,7 @@ class TrailerSection extends HookConsumerWidget {
     final resultProvider = ref.watch(movieVideoProvider);
     return resultProvider.map(
       initial: (value) => const CircularProgressIndicator(),
-      loading: (value) => const TrailerAndPosterSkeleton(
+      loading: (value) => TrailerAndPosterSkeleton(
           widthItem: MovieDetailScreenDimens.trailerItemWidth,
           heightItem: MovieDetailScreenDimens.trailerItemHeight),
       failed: (value) => Center(
@@ -42,7 +42,7 @@ class TrailerSection extends HookConsumerWidget {
                     builder: (context) => YoutubeVideoDialog(
                         videoId: listVideoEntity[index].key!));
               }),
-          separatorBuilder: (context, index) => const SizedBox(
+          separatorBuilder: (context, index) => SizedBox(
                 width: Dimens.smPaddingHorizontal,
               ),
           itemCount: listVideoEntity.length),
