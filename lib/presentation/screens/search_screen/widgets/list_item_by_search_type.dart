@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/screens/search_screen/widgets/cast_item.dart';
@@ -55,7 +56,7 @@ class ListItemBySearchType extends StatelessWidget {
                   return const SizedBox.shrink();
                 },
                 separatorBuilder: (context, index) => const SizedBox(
-                      height: 15,
+                      height: Dimens.mdPaddingVertical,
                     ),
                 itemCount: listEntity.length));
       },

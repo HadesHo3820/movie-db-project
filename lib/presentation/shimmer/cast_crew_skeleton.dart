@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/shimmer/skeleton.dart';
 
 class CastAndCrewSkeleton extends StatelessWidget {
@@ -18,7 +19,8 @@ class CastAndCrewSkeleton extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.zero,
           itemBuilder: (context, index) => buildItem(),
-          separatorBuilder: (context, index) => const SizedBox(width: 10),
+          separatorBuilder: (context, index) =>
+              const SizedBox(width: Dimens.smPaddingHorizontal),
           itemCount: 3),
     );
   }
@@ -32,14 +34,14 @@ class CastAndCrewSkeleton extends StatelessWidget {
           height: heightItem,
         ),
         const SizedBox(
-          height: 5,
+          height: Dimens.xsPaddingVertical,
         ),
         Skeleton(
           width: widthItem - 20,
           height: 10,
         ),
         const SizedBox(
-          height: 5,
+          height: Dimens.xsPaddingVertical,
         ),
         Skeleton(
           width: widthItem - 40,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 
@@ -15,14 +18,16 @@ class DetailScreenAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 250,
+      expandedHeight: Dimens.sliverAppbarHeight,
       pinned: true,
       backgroundColor: AppColors.darkBlue,
       bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(150),
+          preferredSize: const Size.fromHeight(Dimens.preferredSizedHeight),
           child: Container(
-            height: 150,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            height: Dimens.preferredSizedHeight,
+            padding: const EdgeInsets.symmetric(
+                horizontal: Dimens.horizontalPadding,
+                vertical: Dimens.xsPaddingVertical),
             width: double.maxFinite,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,48 +37,44 @@ class DetailScreenAppBar extends StatelessWidget {
                     movieEntity!.posterPath!,
                     PosterSizes.w342,
                   ),
-                  height: 130,
-                  width: 90,
+                  height: MovieDetailScreenDimens.posterHeight,
+                  width: MovieDetailScreenDimens.posterWidth,
                   fit: BoxFit.cover,
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: Dimens.smPaddingHorizontal,
                 ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(movieEntity!.originalTitle!,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 18)),
+                          style: TextStyles.movieDetailScreenStyle[
+                              TextStyleKeys.movieTitle]),
                       const SizedBox(
-                        height: 5,
+                        height: Dimens.xsPaddingVertical,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Expanded(
                             child: Text(
                               'Action, Adventure, Sci-Fi',
-                              style: TextStyle(
-                                  fontSize: 14, color: AppColors.tertiaryGrey),
+                              style: TextStyles.movieDetailScreenStyle[
+                                  TextStyleKeys.genreTitle],
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.timer,
                             color: Colors.white,
                           ),
-                          SizedBox(
-                            width: 2,
+                          const SizedBox(
+                            width: Dimens.xxsPaddingHorizontal,
                           ),
                           Text(
                             '180 mins',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 12),
+                            style: TextStyles.movieDetailScreenStyle[
+                                TextStyleKeys.durationTitle],
                           )
                         ],
                       ),
@@ -81,22 +82,23 @@ class DetailScreenAppBar extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text("${movieEntity!.voteCount!} votes",
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 16)),
+                              style: TextStyles.movieDetailScreenStyle[
+                                  TextStyleKeys.voteTitle]),
                           const SizedBox(
-                            width: 5,
+                            width: Dimens.xsPaddingHorizontal,
                           ),
                           Container(
-                            width: 42,
-                            height: 42,
+                            width: MovieDetailScreenDimens
+                                .voteAverageContainerWidth,
+                            height: MovieDetailScreenDimens
+                                .voteAverageContainerWidth,
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.white),
                             child: Center(
                               child: Text(
                                   movieEntity!.voteAverage!.toStringAsFixed(1),
-                                  style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold)),
+                                  style: TextStyles.movieDetailScreenStyle[
+                                      TextStyleKeys.voteAverage]),
                             ),
                           )
                         ],

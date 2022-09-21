@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/shimmer/skeleton.dart';
 
 class MovieListSkeleton extends StatelessWidget {
@@ -14,14 +15,14 @@ class MovieListSkeleton extends StatelessWidget {
           width: 110,
         ),
         SizedBox(
-          width: 15,
+          width: Dimens.mdPaddingVertical,
         ),
         Skeleton(
           height: 150,
           width: 110,
         ),
         SizedBox(
-          width: 15,
+          width: Dimens.mdPaddingVertical,
         ),
         Skeleton(
           height: 150,

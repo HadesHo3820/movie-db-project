@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
 import 'package:the_movie_app/presentation/reuse_component/image_dialog.dart';
@@ -13,8 +14,9 @@ class PosterSection extends HookConsumerWidget {
     final resultProvier = ref.watch(movieImageProvider);
     return resultProvier.map(
       initial: (value) => const CircularProgressIndicator(),
-      loading: (value) =>
-          const TrailerAndPosterSkeleton(widthItem: 110, heightItem: 150),
+      loading: (value) => const TrailerAndPosterSkeleton(
+          widthItem: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
+          heightItem: MovieDetailScreenDimens.trailerItemHeight),
       failed: (value) => Center(
         child: Text(value.message),
       ),
@@ -24,7 +26,7 @@ class PosterSection extends HookConsumerWidget {
 
   Widget buildListPoster(List<String> result, BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: MovieDetailScreenDimens.trailerItemHeight,
       width: MediaQuery.of(context).size.width,
       child: ListView.separated(
           padding: EdgeInsets.zero,
@@ -39,7 +41,7 @@ class PosterSection extends HookConsumerWidget {
             });
           },
           separatorBuilder: (context, index) => const SizedBox(
-                width: 10,
+                width: Dimens.smPaddingHorizontal,
               ),
           itemCount: result.length),
     );
@@ -50,8 +52,8 @@ class PosterSection extends HookConsumerWidget {
       onTap: onTap,
       child: Image.network(
         imageUrl,
-        width: 110,
-        height: 150,
+        width: MovieDetailScreenDimens.posterItemWidth,
+        height: MovieDetailScreenDimens.trailerItemHeight,
         fit: BoxFit.cover,
       ),
     );

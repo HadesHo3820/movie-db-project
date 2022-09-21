@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -26,11 +27,11 @@ class SplashScreenBody extends StatelessWidget {
             const Spacer(),
             Image.asset(
               AssetsConstants.appLogo,
-              width: 208,
-              height: 150,
+              width: SplashScreenDimens.logoWidth,
+              height: SplashScreenDimens.logoHeight,
             ),
             const SizedBox(
-              height: 30,
+              height: SplashScreenDimens.logoAndCirSpacing,
             ),
             const CircularProgressIndicator(
               color: AppColors.white,
@@ -44,13 +45,13 @@ class SplashScreenBody extends StatelessWidget {
                   TextStyles.splashScreenStyles[TextStyleKeys.copyrightTitle],
             ),
             const SizedBox(
-              height: 10,
+              height: Dimens.smPaddingVertical,
             ),
             Text(SplashScreenText.copyright,
                 style: TextStyles
                     .splashScreenStyles[TextStyleKeys.copyrightTitle]),
             const SizedBox(
-              height: 40,
+              height: SplashScreenDimens.copyrightBottomSpacing,
             ),
           ],
         )

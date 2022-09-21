@@ -8,7 +8,7 @@ class CastEntity implements Entity {
   Department? knownForDepartment;
   String? name;
   String? originalName;
-  double? popularity;
+  num? popularity;
   String? profilePath;
   int? castId;
   String? character;

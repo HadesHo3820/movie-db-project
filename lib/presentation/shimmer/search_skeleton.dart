@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/shimmer/skeleton.dart';
 
 class SearchSkeleton extends StatelessWidget {
@@ -14,42 +15,40 @@ class SearchSkeleton extends StatelessWidget {
           Wrap(
             children: const [
               Skeleton(
-                height: 36,
-                width: 102,
+                height: SearchScreenDimens.searchTypeItemSkeletonHeight,
+                width: SearchScreenDimens.searchTypeItemSkeletonWidth,
               ),
               SizedBox(
-                width: 10,
+                width: Dimens.smPaddingHorizontal,
               ),
               Skeleton(
-                height: 36,
-                width: 102,
+                height: SearchScreenDimens.searchTypeItemSkeletonHeight,
+                width: SearchScreenDimens.searchTypeItemSkeletonWidth,
               ),
               SizedBox(
-                width: 10,
+                width: Dimens.smPaddingHorizontal,
               ),
               Skeleton(
-                height: 36,
-                width: 102,
+                height: SearchScreenDimens.searchTypeItemSkeletonHeight,
+                width: SearchScreenDimens.searchTypeItemSkeletonWidth,
               ),
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: Dimens.smPaddingVertical,
           ),
           const Divider(
             color: AppColors.tertiaryGrey,
           ),
           const SizedBox(
-            height: 10,
+            height: Dimens.smPaddingVertical,
           ),
           buildItemSkeleton(),
           const SizedBox(
-            height: 10,
+            height: Dimens.smPaddingVertical,
           ),
           buildItemSkeleton(),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: Dimens.smPaddingVertical),
           buildItemSkeleton(),
         ],
       ),
@@ -60,32 +59,32 @@ class SearchSkeleton extends StatelessWidget {
     return Row(
       children: [
         const Skeleton(
-          height: 141,
-          width: 94,
+          height: SearchScreenDimens.searchListItemImageSkeletonHeight,
+          width: SearchScreenDimens.searchListItemImageSkeletonWidth,
         ),
         const SizedBox(
-          width: 10,
+          width: Dimens.smPaddingHorizontal,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Skeleton(
-              height: 23,
-              width: 45,
+              height: SearchScreenDimens.searchListItemTitleSkeletonHeight,
+              width: SearchScreenDimens.searchListItemTitleSkeletonWidth,
             ),
             SizedBox(
-              height: 10,
+              height: Dimens.smPaddingVertical,
             ),
             Skeleton(
-              height: 16,
-              width: 100,
+              height: SearchScreenDimens.searchListItemDateSkeletonHeight,
+              width: SearchScreenDimens.searchListItemDateSkeletonWidth,
             ),
             SizedBox(
-              height: 10,
+              height: Dimens.smPaddingVertical,
             ),
             Skeleton(
-              height: 50,
-              width: 200,
+              height: SearchScreenDimens.searchListItemOverviewSkeletonHeight,
+              width: SearchScreenDimens.searchListItemOverviewSkeletonWidth,
             ),
           ],
         )

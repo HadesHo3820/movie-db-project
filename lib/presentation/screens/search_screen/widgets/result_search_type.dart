@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 
@@ -23,13 +24,17 @@ class ResultSearchType extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+        padding: const EdgeInsets.symmetric(
+            vertical: Dimens.smPaddingVertical,
+            horizontal: Dimens.xsPaddingHorizontal),
         decoration: BoxDecoration(
             color: (currentIndex == itemIndex)
                 ? AppColors.tertiaryGrey
                 : AppColors.grey,
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        constraints: const BoxConstraints(maxHeight: 45, maxWidth: 200),
+        constraints: const BoxConstraints(
+            maxHeight: SearchScreenDimens.resultSearchTypeMaxHeight,
+            maxWidth: SearchScreenDimens.resultSearchTypeMaxWidth),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -42,7 +47,7 @@ class ResultSearchType extends StatelessWidget {
                       .searchScreenStyle[TextStyleKeys.unselectedSearchType],
             ),
             const SizedBox(
-              width: 10,
+              width: Dimens.smPaddingVertical,
             ),
             Container(
               padding: const EdgeInsets.all(3),

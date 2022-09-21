@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
@@ -15,15 +16,15 @@ class MovieItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      height: SearchScreenDimens.resultSearchItemHeight,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Colors.white),
       child: Row(
         children: [
           Container(
-            height: 150,
-            width: 100,
+            height: SearchScreenDimens.resultSearchItemHeight,
+            width: SearchScreenDimens.searchListItemImageWidth,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill,
@@ -37,7 +38,7 @@ class MovieItem extends StatelessWidget {
                     bottomLeft: Radius.circular(10))),
           ),
           const SizedBox(
-            width: 10,
+            width: Dimens.smPaddingHorizontal,
           ),
           Expanded(
               child: Column(
@@ -50,7 +51,7 @@ class MovieItem extends StatelessWidget {
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
               const SizedBox(
-                height: 5,
+                height: Dimens.xsPaddingVertical,
               ),
               Text(
                 isMovieType
@@ -63,7 +64,7 @@ class MovieItem extends StatelessWidget {
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemDate],
               ),
               const SizedBox(
-                height: 5,
+                height: Dimens.xsPaddingVertical,
               ),
               Expanded(
                 child: Text(

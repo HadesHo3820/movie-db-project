@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -37,7 +38,7 @@ class SearchResult extends HookConsumerWidget {
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
-          height: 10,
+          height: Dimens.smPaddingVertical,
         ),
         ListSearchType(
             totalResultTvShow: totalResultTvShow,
@@ -45,7 +46,7 @@ class SearchResult extends HookConsumerWidget {
             totalResultPeople: totalResultPeople,
             currentIndex: currentIndex),
         const SizedBox(
-          height: 10,
+          height: Dimens.smPaddingVertical,
         ),
         const Divider(
           color: AppColors.secondaryGrey,

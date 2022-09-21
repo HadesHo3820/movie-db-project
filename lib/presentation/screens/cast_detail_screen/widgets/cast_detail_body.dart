@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -19,7 +20,9 @@ class CastDetailBody extends StatelessWidget {
         },
         body: Container(
           color: AppColors.darkBlue,
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(
+              horizontal: Dimens.horizontalPadding,
+              vertical: Dimens.verticalPadding),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +35,7 @@ class CastDetailBody extends StatelessWidget {
                           .castDetailScreenStyle[TextStyleKeys.overviewContent],
                     )),
                 const SizedBox(
-                  height: 10,
+                  height: Dimens.smPaddingVertical,
                 ),
                 buildTitleAndWidget(
                     title: CastDetailScreenText.careerTitle,
@@ -51,10 +54,12 @@ class CastDetailBody extends StatelessWidget {
 
   Widget buildMovieItem(MovieEntity movieEntity) {
     return Container(
-      height: 70,
+      height: CastDetailScreenDimens.movieCarrerItemHeight,
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(vertical: Dimens.smPaddingVertical),
+      padding: const EdgeInsets.symmetric(
+          vertical: Dimens.xsPaddingVertical,
+          horizontal: Dimens.xsPaddingHorizontal),
       decoration: BoxDecoration(border: Border.all(color: Colors.white)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +87,7 @@ class CastDetailBody extends StatelessWidget {
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
-          height: 10,
+          height: Dimens.smPaddingVertical,
         ),
         widget
       ],

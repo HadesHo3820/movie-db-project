@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
@@ -33,14 +34,14 @@ class CarouselSliderWidget extends HookConsumerWidget {
             },
             options: CarouselOptions(
               initialPage: 0,
-              height: 180,
+              height: HomeScreenDimens.carouselHeight,
               autoPlay: true,
               enlargeCenterPage: true,
               enlargeStrategy: CenterPageEnlargeStrategy.height,
               onPageChanged: (index, reason) => activeIndex.value = index,
             )),
         const SizedBox(
-          height: 32,
+          height: Dimens.verticalPadding,
         ),
         buildIndicator(activeIndex.value),
       ],
@@ -67,15 +68,18 @@ class CarouselSliderWidget extends HookConsumerWidget {
             .pushNamed(RouteNames.detailScreen, arguments: movieEntity);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12),
+        margin:
+            const EdgeInsets.symmetric(horizontal: Dimens.mdPaddingHorizontal),
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: NetworkImage(urlImage), fit: BoxFit.fill)),
         alignment: Alignment.bottomCenter,
         child: Container(
           width: double.infinity,
-          height: 60,
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+          height: HomeScreenDimens.titleContainerHeight,
+          padding: const EdgeInsets.symmetric(
+              vertical: Dimens.smPaddingVertical,
+              horizontal: Dimens.xsPaddingHorizontal),
           color: Colors.black.withOpacity(0.5),
           child: Center(
             child: Text(
@@ -94,8 +98,8 @@ class CarouselSliderWidget extends HookConsumerWidget {
       activeIndex: activeIndex,
       count: listMovieEntity.length,
       effect: const SlideEffect(
-          dotWidth: 10,
-          dotHeight: 10,
+          dotWidth: HomeScreenDimens.indicatorWidth,
+          dotHeight: HomeScreenDimens.indicatorWidth,
           activeDotColor: AppColors.tertiaryGrey,
           dotColor: AppColors.grey),
     );

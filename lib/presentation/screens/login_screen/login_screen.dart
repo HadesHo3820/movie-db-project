@@ -6,6 +6,7 @@ import 'package:the_movie_app/application/authentication/auth_state.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/auth_provider.dart';
 import 'package:the_movie_app/presentation/reuse_component/loading_widget.dart';
@@ -50,23 +51,24 @@ class LoginScreen extends HookConsumerWidget {
               width: double.infinity,
               height: double.infinity,
               color: AppColors.darkBlue,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Dimens.horizontalPadding),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 90,
+                      height: LoginScreenDimens.logoTopSpacing,
                     ),
                     Center(
                       child: Image.asset(
                         AssetsConstants.appLogo,
-                        width: 208,
-                        height: 150,
+                        width: LoginScreenDimens.logoWidth,
+                        height: LoginScreenDimens.logoHeight,
                       ),
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: LoginScreenDimens.logoAndTextfieldSpacing,
                     ),
                     LabelAndTextField(
                       label: LoginScreenText.usernameLabel,
@@ -75,7 +77,7 @@ class LoginScreen extends HookConsumerWidget {
                       isPasswordType: false,
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: Dimens.mdPaddingVertical,
                     ),
                     LabelAndTextField(
                         label: LoginScreenText.passwordLabel,
@@ -83,7 +85,7 @@ class LoginScreen extends HookConsumerWidget {
                         hintText: LoginScreenText.passwordHintText,
                         isPasswordType: true),
                     const SizedBox(
-                      height: 30,
+                      height: LoginScreenDimens.textFieldAndButtonSpacing,
                     ),
                     SignInButton(
                         labelButton: LoginScreenText.loginButtonLabel,
@@ -94,12 +96,12 @@ class LoginScreen extends HookConsumerWidget {
                                   password: passwordController.text.trim()));
                         }),
                     const SizedBox(
-                      height: 80,
+                      height: LoginScreenDimens.buttonAndDividerSpacing,
                     ),
                     const LabelWithDivider(
                         label: LoginScreenText.otherLoginMethodLabel),
                     const SizedBox(
-                      height: 20,
+                      height: LoginScreenDimens.dividerAndOtherButtonSpacing,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +109,7 @@ class LoginScreen extends HookConsumerWidget {
                         CustomSignInMethodIconButton(
                             assetPath: AssetsConstants.fbLogo),
                         SizedBox(
-                          width: 10,
+                          width: Dimens.smPaddingHorizontal,
                         ),
                         CustomSignInMethodIconButton(
                             assetPath: AssetsConstants.googleLogo),

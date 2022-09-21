@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -17,18 +18,18 @@ class HomeScreenAppBar extends StatelessWidget {
       children: [
         Image.asset(
           AssetsConstants.appLogo,
-          width: 48,
-          height: 35,
+          width: HomeScreenDimens.logoWidth,
+          height: HomeScreenDimens.logoHeight,
         ),
         const SizedBox(
-          width: 15,
+          width: Dimens.mdPaddingHorizontal,
         ),
         Expanded(
           child: InkWell(
             onTap: () =>
                 Navigator.of(context).pushNamed(RouteNames.searchScreen),
             child: Container(
-              height: 35,
+              height: HomeScreenDimens.logoHeight,
               width: double.infinity,
               decoration: const BoxDecoration(
                   color: AppColors.secondaryDarkBlue,

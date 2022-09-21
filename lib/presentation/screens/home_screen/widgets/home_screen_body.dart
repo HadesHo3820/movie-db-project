@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/concrete_section.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/playing/playing_section.dart';
@@ -19,25 +20,25 @@ class HomeScreenBody extends HookConsumerWidget {
               labelText: HomeScreenText.trendingLabel,
               sectionContent: TrendingSection()),
           SizedBox(
-            height: 20,
+            height: Dimens.verticalPadding,
           ),
           ConcreteSection(
               labelText: HomeScreenText.popularLabel,
               sectionContent: PopularSection()),
           SizedBox(
-            height: 20,
+            height: Dimens.verticalPadding,
           ),
           ConcreteSection(
               labelText: HomeScreenText.topRateLabel,
               sectionContent: TopRatedSection()),
           SizedBox(
-            height: 20,
+            height: Dimens.verticalPadding,
           ),
           ConcreteSection(
               labelText: HomeScreenText.playingMovieLabel,
               sectionContent: PlayingSection()),
           SizedBox(
-            height: 20,
+            height: Dimens.verticalPadding,
           ),
           ConcreteSection(
               labelText: HomeScreenText.upcomingMovieLabel,

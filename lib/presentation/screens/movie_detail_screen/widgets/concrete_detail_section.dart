@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 
@@ -20,7 +21,7 @@ class ConcreteDetailSection extends StatelessWidget {
           style: TextStyles.appStyle[TextStyleKeys.sectionTitle],
         ),
         const SizedBox(
-          height: 5,
+          height: Dimens.xsPaddingVertical,
         ),
         concreteWidget
       ],

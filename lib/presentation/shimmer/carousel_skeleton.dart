@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/shimmer/skeleton.dart';
 
 class CarouselSkeleton extends StatelessWidget {
@@ -17,14 +18,14 @@ class CarouselSkeleton extends StatelessWidget {
               width: 80,
             ),
             SizedBox(
-              width: 15,
+              width: Dimens.mdPaddingHorizontal,
             ),
             Skeleton(
               height: 180,
               width: 160,
             ),
             SizedBox(
-              width: 15,
+              width: Dimens.mdPaddingHorizontal,
             ),
             Skeleton(
               height: 150,
@@ -33,7 +34,7 @@ class CarouselSkeleton extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          height: 10,
+          height: Dimens.smPaddingVertical,
         ),
         SizedBox(
           height: 10,
@@ -47,7 +48,7 @@ class CarouselSkeleton extends StatelessWidget {
                     boxShape: BoxShape.circle,
                   ),
               separatorBuilder: (context, index) => const SizedBox(
-                    width: 2,
+                    width: Dimens.xxsPaddingHorizontal,
                   ),
               itemCount: 8),
         )

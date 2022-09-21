@@ -1,6 +1,7 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 
@@ -28,13 +29,13 @@ class LabelAndTextField extends HookWidget {
           style: TextStyles.loginScreenStyles[TextStyleKeys.textfieldLabel],
         ),
         const SizedBox(
-          height: 5,
+          height: Dimens.xsPaddingVertical,
         ),
         Container(
           width: double.infinity,
-          height: 45,
+          height: LoginScreenDimens.textFieldHeight,
           color: Colors.white,
-          padding: const EdgeInsets.only(left: 5),
+          padding: const EdgeInsets.only(left: Dimens.xsPaddingHorizontal),
           child: TextField(
             controller: controller,
             cursorColor: AppColors.darkBlue,

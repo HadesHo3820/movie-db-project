@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/screens/home_screen/widgets/label_section.dart';
 
 class ConcreteSection extends HookConsumerWidget {
@@ -15,7 +16,7 @@ class ConcreteSection extends HookConsumerWidget {
       children: [
         LabelSection(content: labelText),
         const SizedBox(
-          height: 10,
+          height: Dimens.smPaddingVertical,
         ),
         sectionContent
       ],

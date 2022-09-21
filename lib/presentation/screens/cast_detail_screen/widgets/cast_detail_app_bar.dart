@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -18,14 +19,16 @@ class CastDetailAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 250,
+      expandedHeight: Dimens.sliverAppbarHeight,
       pinned: true,
       backgroundColor: AppColors.darkBlue,
       bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(150),
+          preferredSize: const Size.fromHeight(Dimens.preferredSizedHeight),
           child: Container(
-            height: 150,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            height: Dimens.preferredSizedHeight,
+            padding: const EdgeInsets.symmetric(
+                horizontal: Dimens.horizontalPadding,
+                vertical: Dimens.xsPaddingVertical),
             width: double.infinity,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,11 +36,11 @@ class CastDetailAppBar extends StatelessWidget {
                 ImageWidget(
                     imageUrl: ApiConstant.imageProfileApi(
                         castEntity.profilePath ?? "N/A", ProfileSizes.w300),
-                    width: 90,
-                    height: 90,
+                    width: CastDetailScreenDimens.posterWidth,
+                    height: CastDetailScreenDimens.posterWidth,
                     boxShape: BoxShape.circle),
                 const SizedBox(
-                  width: 10,
+                  width: Dimens.smPaddingVertical,
                 ),
                 Expanded(
                     child: Column(
@@ -88,7 +91,7 @@ class CastDetailAppBar extends StatelessWidget {
             style: TextStyles.castDetailScreenStyle[TextStyleKeys.labelTitle],
           ),
           const SizedBox(
-            width: 2,
+            width: Dimens.xsPaddingHorizontal,
           ),
           Expanded(
             child: Text(

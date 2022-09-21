@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 
 class SignInButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -13,7 +14,7 @@ class SignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 55,
+      height: LoginScreenDimens.signInMethodButtonHeight,
       width: double.infinity,
       child: ElevatedButton(
           onPressed: onPressed,

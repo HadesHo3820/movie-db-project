@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
@@ -13,15 +14,15 @@ class CastItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      height: SearchScreenDimens.resultSearchItemHeight,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Colors.white),
       child: Row(
         children: [
           Container(
-            height: 150,
-            width: 100,
+            height: SearchScreenDimens.resultSearchItemHeight,
+            width: SearchScreenDimens.searchListItemImageWidth,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill,
@@ -35,7 +36,7 @@ class CastItem extends StatelessWidget {
                     bottomLeft: Radius.circular(10))),
           ),
           const SizedBox(
-            width: 10,
+            width: Dimens.smPaddingVertical,
           ),
           Expanded(
               child: Column(
@@ -46,7 +47,7 @@ class CastItem extends StatelessWidget {
                 style: TextStyles.searchScreenStyle[TextStyleKeys.itemName],
               ),
               const SizedBox(
-                height: 20,
+                height: Dimens.verticalPadding,
               ),
               Text(
                 'Popularity: ${castEntity.popularity}',

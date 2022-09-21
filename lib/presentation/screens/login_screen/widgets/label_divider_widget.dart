@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 
 class LabelWithDivider extends StatelessWidget {
   final String label;
@@ -16,11 +17,11 @@ class LabelWithDivider extends StatelessWidget {
           color: Colors.white,
         )),
         const SizedBox(
-          width: 7,
+          width: Dimens.xsPaddingHorizontal,
         ),
         Text(label, style: const TextStyle(color: Colors.white, fontSize: 15)),
         const SizedBox(
-          width: 7,
+          width: Dimens.xsPaddingHorizontal,
         ),
         const Expanded(
             child: Divider(

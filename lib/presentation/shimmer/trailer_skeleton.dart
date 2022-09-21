@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/presentation/shimmer/skeleton.dart';
 
 class TrailerAndPosterSkeleton extends StatelessWidget {
@@ -21,7 +22,8 @@ class TrailerAndPosterSkeleton extends StatelessWidget {
                 width: widthItem,
                 height: heightItem,
               ),
-          separatorBuilder: (context, index) => const SizedBox(width: 10),
+          separatorBuilder: (context, index) =>
+              const SizedBox(width: Dimens.smPaddingHorizontal),
           itemCount: 3),
     );
   }

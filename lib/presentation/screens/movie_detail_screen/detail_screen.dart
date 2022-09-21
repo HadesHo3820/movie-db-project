@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
@@ -26,7 +27,9 @@ class DetailScreen extends HookConsumerWidget {
         },
         body: Container(
           color: AppColors.darkBlue,
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+              vertical: Dimens.verticalPadding,
+              horizontal: Dimens.horizontalPadding),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -34,29 +37,29 @@ class DetailScreen extends HookConsumerWidget {
                     label: DetailScreenText.overviewLabel,
                     concreteWidget: Text(
                       movieEntity!.overview!,
-                      style: TextStyles
-                          .detailScreenStyle[TextStyleKeys.overviewContent],
+                      style: TextStyles.movieDetailScreenStyle[
+                          TextStyleKeys.overviewContent],
                     )),
                 const SizedBox(
-                  height: 10,
+                  height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.trailerLabel,
                     concreteWidget: TrailerSection()),
                 const SizedBox(
-                  height: 10,
+                  height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.posterLabel,
                     concreteWidget: PosterSection()),
                 const SizedBox(
-                  height: 10,
+                  height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.castLabel,
                     concreteWidget: CastAndCrewSection(isCast: true)),
                 const SizedBox(
-                  height: 10,
+                  height: Dimens.mdPaddingVertical,
                 ),
                 const ConcreteDetailSection(
                     label: DetailScreenText.filmCrewLabel,

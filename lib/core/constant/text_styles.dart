@@ -26,9 +26,9 @@ class TextStyles {
 
   static Map<String, TextStyle> navBarStyles = {
     TextStyleKeys.navLabelSelected:
-        const TextStyle(color: AppColors.tertiaryGrey, fontSize: 15),
+        const TextStyle(color: AppColors.white, fontSize: 13),
     TextStyleKeys.navLabelUnselected:
-        const TextStyle(color: AppColors.secondaryGrey, fontSize: 15)
+        const TextStyle(color: AppColors.secondaryGrey, fontSize: 11)
   };
 
   static Map<String, TextStyle> homeScreenStyle = {
@@ -41,15 +41,13 @@ class TextStyles {
         fontStyle: FontStyle.italic)
   };
 
-  static Map<String, TextStyle> detailScreenStyle = {
+  static Map<String, TextStyle> movieDetailScreenStyle = {
     TextStyleKeys.movieTitle: const TextStyle(
-        fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.white),
+        fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.white),
     TextStyleKeys.genreTitle:
-        const TextStyle(fontSize: 12, color: AppColors.tertiaryGrey),
+        const TextStyle(fontSize: 14, color: AppColors.tertiaryGrey),
     TextStyleKeys.durationTitle: const TextStyle(
-        fontSize: 12,
-        color: AppColors.tertiaryGrey,
-        fontWeight: FontWeight.bold),
+        fontSize: 12, color: AppColors.white, fontWeight: FontWeight.bold),
     TextStyleKeys.voteTitle:
         const TextStyle(fontSize: 12, color: AppColors.white),
     TextStyleKeys.voteAverage: const TextStyle(

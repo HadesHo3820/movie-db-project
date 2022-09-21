@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 
 class CustomSignInMethodIconButton extends StatelessWidget {
   final String assetPath;
@@ -11,8 +12,8 @@ class CustomSignInMethodIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 55,
-        width: 80,
+        height: LoginScreenDimens.signInMethodButtonHeight,
+        width: LoginScreenDimens.signInMethodButtonWidth,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               primary: AppColors.secondaryDarkBlue,
@@ -21,8 +22,8 @@ class CustomSignInMethodIconButton extends StatelessWidget {
           onPressed: () {},
           child: Image.asset(
             assetPath,
-            width: 36,
-            height: 36,
+            width: LoginScreenDimens.iconSignInMethodButtonWidth,
+            height: LoginScreenDimens.iconSignInMethodButtonHeight,
           ),
         ));
   }

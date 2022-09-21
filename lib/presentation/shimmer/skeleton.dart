@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 
 class Skeleton extends StatelessWidget {
   final double? width, height;
@@ -13,7 +14,9 @@ class Skeleton extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(
+          vertical: Dimens.xsPaddingVertical,
+          horizontal: Dimens.xsPaddingHorizontal),
       decoration: BoxDecoration(
           shape: boxShape,
           color: AppColors.secondaryGrey,

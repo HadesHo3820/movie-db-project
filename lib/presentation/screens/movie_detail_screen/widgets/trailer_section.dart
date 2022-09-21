@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/domain/entities/video_entity.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
 import 'package:the_movie_app/presentation/reuse_component/youtube_video_dialog.dart';
@@ -14,8 +15,9 @@ class TrailerSection extends HookConsumerWidget {
     final resultProvider = ref.watch(movieVideoProvider);
     return resultProvider.map(
       initial: (value) => const CircularProgressIndicator(),
-      loading: (value) =>
-          const TrailerAndPosterSkeleton(widthItem: 160, heightItem: 150),
+      loading: (value) => const TrailerAndPosterSkeleton(
+          widthItem: MovieDetailScreenDimens.trailerItemWidth,
+          heightItem: MovieDetailScreenDimens.trailerItemHeight),
       failed: (value) => Center(
         child: Text(value.message),
       ),
@@ -28,7 +30,7 @@ class TrailerSection extends HookConsumerWidget {
   Widget buildListTrailer(
       List<VideoEntity> listVideoEntity, BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: MovieDetailScreenDimens.trailerListHeight,
       width: double.infinity,
       child: ListView.separated(
           padding: EdgeInsets.zero,
@@ -41,7 +43,7 @@ class TrailerSection extends HookConsumerWidget {
                         videoId: listVideoEntity[index].key!));
               }),
           separatorBuilder: (context, index) => const SizedBox(
-                width: 10,
+                width: Dimens.smPaddingHorizontal,
               ),
           itemCount: listVideoEntity.length),
     );
@@ -52,15 +54,15 @@ class TrailerSection extends HookConsumerWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 160,
-        height: 150,
+        width: MovieDetailScreenDimens.trailerItemWidth,
+        height: MovieDetailScreenDimens.trailerItemHeight,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: NetworkImage(urlThumbnail), fit: BoxFit.fill)),
         child: Container(
-          width: 50,
-          height: 50,
+          width: MovieDetailScreenDimens.playButtonWidth,
+          height: MovieDetailScreenDimens.playButtonWidth,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.darkBlue.withOpacity(0.6)),

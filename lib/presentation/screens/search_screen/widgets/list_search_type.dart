@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/screens/search_screen/widgets/result_search_type.dart';
 
@@ -22,7 +23,7 @@ class ListSearchType extends StatelessWidget {
       builder: (context, currentIndex, _) {
         return Wrap(
           direction: Axis.horizontal,
-          spacing: 5,
+          spacing: Dimens.xsPaddingHorizontal,
           children: [
             ResultSearchType(
                 label: SearchScreenText.tvShowType,
