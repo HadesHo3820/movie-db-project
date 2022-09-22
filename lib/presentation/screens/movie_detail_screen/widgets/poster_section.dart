@@ -5,6 +5,7 @@ import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
 import 'package:the_movie_app/presentation/reuse_component/image_dialog.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 import 'package:the_movie_app/presentation/shimmer/trailer_skeleton.dart';
 
 class PosterSection extends HookConsumerWidget {
@@ -50,12 +51,10 @@ class PosterSection extends HookConsumerWidget {
   Widget buildPosterItem(String imageUrl, void Function() onTap) {
     return InkWell(
       onTap: onTap,
-      child: Image.network(
-        imageUrl,
-        width: MovieDetailScreenDimens.posterItemWidth,
-        height: MovieDetailScreenDimens.trailerItemHeight,
-        fit: BoxFit.cover,
-      ),
+      child: NetworkImageWidget(
+          imageUrl: imageUrl,
+          width: MovieDetailScreenDimens.posterItemWidth,
+          height: MovieDetailScreenDimens.trailerItemHeight),
     );
   }
 }

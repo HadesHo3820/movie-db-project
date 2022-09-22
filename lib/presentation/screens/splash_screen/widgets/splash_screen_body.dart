@@ -5,9 +5,10 @@ import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
+import 'package:the_movie_app/presentation/reuse_component/asset_image.dart';
 
-class SplashScreenBody extends StatelessWidget {
-  const SplashScreenBody({
+class SplashScreenForeground extends StatelessWidget {
+  const SplashScreenForeground({
     Key? key,
   }) : super(key: key);
 
@@ -25,11 +26,10 @@ class SplashScreenBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(),
-            Image.asset(
-              AssetsConstants.appLogo,
-              width: SplashScreenDimens.logoWidth,
-              height: SplashScreenDimens.logoHeight,
-            ),
+            AssetImageWidget(
+                width: SplashScreenDimens.logoWidth,
+                height: SplashScreenDimens.logoHeight,
+                url: AssetsConstants.appLogo),
             SizedBox(
               height: SplashScreenDimens.logoAndCirSpacing,
             ),

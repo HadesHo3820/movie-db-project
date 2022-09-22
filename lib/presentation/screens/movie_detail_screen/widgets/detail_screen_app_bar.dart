@@ -6,6 +6,7 @@ import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 
 class DetailScreenAppBar extends StatelessWidget {
   const DetailScreenAppBar({
@@ -32,15 +33,13 @@ class DetailScreenAppBar extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.network(
-                  ApiConstant.imagePosterApi(
-                    movieEntity!.posterPath!,
-                    PosterSizes.w342,
-                  ),
-                  height: MovieDetailScreenDimens.posterHeight,
-                  width: MovieDetailScreenDimens.posterWidth,
-                  fit: BoxFit.cover,
-                ),
+                NetworkImageWidget(
+                    imageUrl: ApiConstant.imagePosterApi(
+                      movieEntity!.posterPath!,
+                      PosterSizes.w342,
+                    ),
+                    width: MovieDetailScreenDimens.posterWidth,
+                    height: MovieDetailScreenDimens.posterHeight),
                 SizedBox(
                   width: Dimens.smPaddingHorizontal,
                 ),
@@ -112,11 +111,11 @@ class DetailScreenAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         background: Opacity(
           opacity: 0.6,
-          child: Image.network(
-              ApiConstant.imageBackdropApi(
+          child: NetworkImageWidget(
+              imageUrl: ApiConstant.imageBackdropApi(
                   movieEntity!.backdropPath!, BackdropSizes.w780),
-              width: double.maxFinite,
-              fit: BoxFit.fill),
+              width: double.infinity,
+              height: Dimens.preferredSizedHeight),
         ),
       ),
     );

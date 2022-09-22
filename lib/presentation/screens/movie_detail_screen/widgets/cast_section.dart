@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_movie_app/core/constant.dart';
-import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
@@ -9,6 +8,7 @@ import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/cast_detail_provider.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/movie_detail_providers.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 import 'package:the_movie_app/presentation/shimmer/cast_crew_skeleton.dart';
 import 'package:the_movie_app/application/cast_detail_info/cast_detail_event.dart';
 
@@ -68,19 +68,11 @@ class CastAndCrewSection extends HookConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              ApiConstant.imageProfileApi(
-                  castEntity.profilePath ?? "", ProfileSizes.w300),
-              height: MovieDetailScreenDimens.trailerItemHeight,
-              width: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
-              fit: BoxFit.fill,
-              errorBuilder: (context, error, stackTrace) => Image.asset(
-                AssetsConstants.appLogo,
-                fit: BoxFit.fill,
-                height: MovieDetailScreenDimens.trailerItemHeight,
+            NetworkImageWidget(
+                imageUrl: ApiConstant.imageProfileApi(
+                    castEntity.profilePath!, ProfileSizes.w300),
                 width: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
-              ),
-            ),
+                height: MovieDetailScreenDimens.trailerItemHeight),
             SizedBox(
               height: Dimens.smPaddingVertical,
             ),

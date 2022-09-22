@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/decoration.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
+import 'package:the_movie_app/presentation/reuse_component/asset_image.dart';
 
 class CustomSignInMethodIconButton extends StatelessWidget {
   final String assetPath;
@@ -18,13 +20,12 @@ class CustomSignInMethodIconButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               primary: AppColors.secondaryDarkBlue,
               shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)))),
+                  borderRadius: AppDecoration.borderRadius)),
           onPressed: () {},
-          child: Image.asset(
-            assetPath,
-            width: LoginScreenDimens.iconSignInMethodButtonWidth,
-            height: LoginScreenDimens.iconSignInMethodButtonHeight,
-          ),
+          child: AssetImageWidget(
+              width: LoginScreenDimens.iconSignInMethodButtonWidth,
+              height: LoginScreenDimens.iconSignInMethodButtonHeight,
+              url: assetPath),
         ));
   }
 }

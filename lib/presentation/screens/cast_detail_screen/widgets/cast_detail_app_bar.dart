@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant.dart';
-import 'package:the_movie_app/core/constant/assets.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
@@ -9,7 +8,7 @@ import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/data/models/cast_model.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
-import 'package:the_movie_app/presentation/reuse_component/image_widget.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 
 class CastDetailAppBar extends StatelessWidget {
   final CastEntity castEntity;
@@ -70,18 +69,24 @@ class CastDetailAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         background: Opacity(
           opacity: 0.6,
-          child: Image.network(
-            ApiConstant.imageProfileApi(
-                castEntity.profilePath ?? 'N/A', ProfileSizes.w300),
-            width: double.infinity,
-            fit: BoxFit.fill,
-            errorBuilder: (context, error, stackTrace) =>
-                Image.asset(AssetsConstants.appLogo),
-          ),
+          child: NetworkImageWidget(
+              imageUrl: ApiConstant.imageProfileApi(
+                  castEntity.profilePath ?? 'N/A', ProfileSizes.w300),
+              width: double.infinity,
+              height: Dimens.sliverAppbarHeight),
         ),
       ),
     );
   }
+
+  // Image.network(
+  // ApiConstant.imageProfileApi(
+  //     castEntity.profilePath ?? 'N/A', ProfileSizes.w300),
+  //           width: double.infinity,
+  //           fit: BoxFit.fill,
+  //           errorBuilder: (context, error, stackTrace) =>
+  //               Image.asset(AssetsConstants.appLogo),
+  //         )
 
   Widget buildCastInfoItem(String title, String content) => Row(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -39,7 +39,7 @@ class SplashScreen extends ConsumerWidget {
             image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("assets/images/splash_screen_bg.png"))),
-        child: const SplashScreenBody(),
+        child: const SplashScreenForeground(),
       ),
     );
   }

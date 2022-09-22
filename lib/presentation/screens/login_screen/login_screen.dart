@@ -9,6 +9,7 @@ import 'package:the_movie_app/core/constant/colors.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/texts.dart';
 import 'package:the_movie_app/presentation/logic_holders/providers/auth_provider.dart';
+import 'package:the_movie_app/presentation/reuse_component/asset_image.dart';
 import 'package:the_movie_app/presentation/reuse_component/loading_widget.dart';
 import 'package:the_movie_app/presentation/screens/login_screen/widgets/label_and_textfield_widget.dart';
 import 'package:the_movie_app/presentation/screens/login_screen/widgets/label_divider_widget.dart';
@@ -55,18 +56,15 @@ class LoginScreen extends HookConsumerWidget {
                   EdgeInsets.symmetric(horizontal: Dimens.horizontalPadding),
               child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: LoginScreenDimens.logoTopSpacing,
                     ),
-                    Center(
-                      child: Image.asset(
-                        AssetsConstants.appLogo,
+                    AssetImageWidget(
                         width: LoginScreenDimens.logoWidth,
                         height: LoginScreenDimens.logoHeight,
-                      ),
-                    ),
+                        url: AssetsConstants.appLogo),
                     SizedBox(
                       height: LoginScreenDimens.logoAndTextfieldSpacing,
                     ),

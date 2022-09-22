@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:the_movie_app/core/constant/colors.dart';
+import 'package:the_movie_app/core/constant/decoration.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
+import 'package:the_movie_app/core/constant/keys.dart';
+import 'package:the_movie_app/core/constant/text_styles.dart';
 
 class SignInButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -20,11 +23,11 @@ class SignInButton extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                  borderRadius: LoginScreenDecoration.borderRadiusButton),
               primary: AppColors.lightBlue),
           child: Text(
             labelButton,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyles.loginScreenStyles[TextStyleKeys.buttonLabel],
           )),
     );
   }

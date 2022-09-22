@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
-import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 
 class MovieItem extends StatelessWidget {
   MovieEntity movieEntity;
@@ -22,20 +21,12 @@ class MovieItem extends StatelessWidget {
           color: Colors.white),
       child: Row(
         children: [
-          Container(
-            height: SearchScreenDimens.resultSearchItemHeight,
+          NetworkImageWidget(
+            imageUrl: movieEntity.backdropPath!,
             width: SearchScreenDimens.searchListItemImageWidth,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: (movieEntity.backdropPath!.isNotEmpty)
-                        ? NetworkImage(ApiConstant.imageBackdropApi(
-                            movieEntity.backdropPath!, BackdropSizes.w300))
-                        : const AssetImage('assets/images/logo.png')
-                            as ImageProvider),
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10))),
+            height: SearchScreenDimens.resultSearchItemHeight,
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
           ),
           SizedBox(
             width: Dimens.smPaddingHorizontal,
