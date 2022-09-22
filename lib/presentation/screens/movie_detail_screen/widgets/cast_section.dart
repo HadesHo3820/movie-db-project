@@ -70,7 +70,7 @@ class CastAndCrewSection extends HookConsumerWidget {
           children: [
             NetworkImageWidget(
                 imageUrl: ApiConstant.imageProfileApi(
-                    castEntity.profilePath!, ProfileSizes.w300),
+                    castEntity.profilePath ?? '', ProfileSizes.w300),
                 width: MovieDetailScreenDimens.castAndCrewSkeletonWidth,
                 height: MovieDetailScreenDimens.trailerItemHeight),
             SizedBox(

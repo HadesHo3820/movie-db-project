@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:the_movie_app/core/constant.dart';
 import 'package:the_movie_app/core/constant/dimens.dart';
 import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
+import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/movie_entity.dart';
 import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 
@@ -22,7 +24,8 @@ class MovieItem extends StatelessWidget {
       child: Row(
         children: [
           NetworkImageWidget(
-            imageUrl: movieEntity.backdropPath!,
+            imageUrl: ApiConstant.imageBackdropApi(
+                movieEntity.backdropPath ?? '', BackdropSizes.w300),
             width: SearchScreenDimens.searchListItemImageWidth,
             height: SearchScreenDimens.resultSearchItemHeight,
             borderRadius: const BorderRadius.only(

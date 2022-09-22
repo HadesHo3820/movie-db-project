@@ -29,7 +29,7 @@ class LoginScreenDimens {
   static double logoWidth = 208.w;
   static double logoHeight = 150.h;
   static double logoAndTextfieldSpacing = 50.h;
-  static double textFieldHeight = 45.h;
+  static double textFieldHeight = 55.h;
   static double textFieldAndButtonSpacing = 30.h;
   static double buttonAndDividerSpacing = 80.h;
   static double dividerAndOtherButtonSpacing = 20.h;

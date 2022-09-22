@@ -5,6 +5,7 @@ import 'package:the_movie_app/core/constant/keys.dart';
 import 'package:the_movie_app/core/constant/text_styles.dart';
 import 'package:the_movie_app/core/enums.dart';
 import 'package:the_movie_app/domain/entities/cast_entity.dart';
+import 'package:the_movie_app/presentation/reuse_component/network_image_widget.dart';
 
 class CastItem extends StatelessWidget {
   CastEntity castEntity;
@@ -20,21 +21,14 @@ class CastItem extends StatelessWidget {
           color: Colors.white),
       child: Row(
         children: [
-          Container(
-            height: SearchScreenDimens.resultSearchItemHeight,
-            width: SearchScreenDimens.searchListItemImageWidth,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: castEntity.profilePath != null
-                        ? NetworkImage(ApiConstant.imageProfileApi(
-                            castEntity.profilePath!, ProfileSizes.w300))
-                        : const AssetImage('assets/images/logo.png')
-                            as ImageProvider),
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10))),
-          ),
+          NetworkImageWidget(
+              imageUrl: ApiConstant.imageProfileApi(
+                  castEntity.profilePath ?? '', ProfileSizes.w300),
+              width: SearchScreenDimens.searchListItemImageWidth,
+              height: SearchScreenDimens.resultSearchItemHeight,
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  bottomLeft: Radius.circular(10))),
           SizedBox(
             width: Dimens.smPaddingVertical,
           ),

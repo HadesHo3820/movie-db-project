@@ -8,3 +8,5 @@ enum ProfileSizes {
   w185,
   w300,
 }
+
+enum TextFieldType { username, password }

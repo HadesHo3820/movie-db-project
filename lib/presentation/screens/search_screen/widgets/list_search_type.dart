@@ -24,6 +24,7 @@ class ListSearchType extends StatelessWidget {
         return Wrap(
           direction: Axis.horizontal,
           spacing: Dimens.xsPaddingHorizontal,
+          runSpacing: Dimens.xsPaddingHorizontal,
           children: [
             ResultSearchType(
                 label: SearchScreenText.tvShowType,
